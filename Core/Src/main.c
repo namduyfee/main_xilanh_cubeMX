@@ -64,9 +64,9 @@ osThreadId myTask04Handle;
 void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
 static void MX_DMA_Init(void);
-//static void MX_ADC1_Init(void);
-//static void MX_I2C1_Init(void);
-//static void MX_TIM2_Init(void);
+static void MX_ADC1_Init(void);
+static void MX_I2C1_Init(void);
+static void MX_TIM2_Init(void);
 static void MX_USART1_UART_Init(void);
 static void MX_USART2_UART_Init(void);
 static void MX_USART3_UART_Init(void);
@@ -75,7 +75,6 @@ void StartTask02(void const * argument);
 void StartTask03(void const * argument);
 void StartTask04(void const * argument);
 
-extern int tem; 
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */
@@ -103,29 +102,36 @@ int main(void)
   /* USER CODE BEGIN Init */
 
   /* USER CODE END Init */
-	tem = 2; 
+
   /* Configure the system clock */
   SystemClock_Config();
 
   /* USER CODE BEGIN SysInit */
 
   /* USER CODE END SysInit */
-	tem = 3; 
+
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
-//  MX_DMA_Init();
-//  MX_ADC1_Init();
-//  MX_I2C1_Init();
-//  MX_TIM2_Init();
-
+  MX_DMA_Init();
+  MX_ADC1_Init();
+  MX_I2C1_Init();
+  MX_TIM2_Init();
   MX_USART1_UART_Init();
-
   MX_USART2_UART_Init();
- 
   MX_USART3_UART_Init();
   /* USER CODE BEGIN 2 */
   FEE_RTOS_Innit();
+	 control_xilanh(1,0);
+	 control_xilanh(2,0);
+	 control_xilanh(3,0);
+	 control_xilanh(4,0);
+	 control_xilanh(5,0);
+	 control_xilanh(6,0);
+	 control_xilanh(7,0);
+	 control_xilanh(8,0);
+
   /* USER CODE END 2 */
+
   /* USER CODE BEGIN RTOS_MUTEX */
   /* add mutexes, ... */
   /* USER CODE END RTOS_MUTEX */
@@ -144,7 +150,7 @@ int main(void)
 
   /* Create the thread(s) */
   /* definition and creation of defaultTask */
-  osThreadDef(defaultTask, StartDefaultTask,osPriorityRealtime , 0, 128);
+  osThreadDef(defaultTask, StartDefaultTask, osPriorityNormal, 0, 128);
   defaultTaskHandle = osThreadCreate(osThread(defaultTask), NULL);
 
   /* definition and creation of myTask02 */
@@ -165,6 +171,7 @@ int main(void)
 
   /* Start scheduler */
   osKernelStart();
+
   /* We should never get here as control is now taken by the scheduler */
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
@@ -245,7 +252,7 @@ static void MX_ADC1_Init(void)
   */
   hadc1.Instance = ADC1;
   hadc1.Init.ScanConvMode = ADC_SCAN_ENABLE;
-  hadc1.Init.ContinuousConvMode = ENABLE;
+  hadc1.Init.ContinuousConvMode = DISABLE;
   hadc1.Init.DiscontinuousConvMode = DISABLE;
   hadc1.Init.ExternalTrigConv = ADC_SOFTWARE_START;
   hadc1.Init.DataAlign = ADC_DATAALIGN_RIGHT;
@@ -313,7 +320,7 @@ static void MX_I2C1_Init(void)
 
   /* USER CODE END I2C1_Init 1 */
   hi2c1.Instance = I2C1;
-  hi2c1.Init.ClockSpeed = 1000;
+  hi2c1.Init.ClockSpeed = 100;
   hi2c1.Init.DutyCycle = I2C_DUTYCYCLE_2;
   hi2c1.Init.OwnAddress1 = 0;
   hi2c1.Init.AddressingMode = I2C_ADDRESSINGMODE_7BIT;
@@ -516,7 +523,8 @@ static void MX_GPIO_Init(void)
                           |MC1_Pin|MC2_Pin|MC3_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOB, IO0_Pin|BUZZER_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOB, MC5_Pin|MC6_Pin|MC7_Pin|MC8_Pin
+                          |MC4_Pin|BUZZER_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pins : IO1_Pin IO2_Pin IO3_Pin */
   GPIO_InitStruct.Pin = IO1_Pin|IO2_Pin|IO3_Pin;
@@ -534,33 +542,51 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : PB12 PB13 PB14 PB15 */
-  GPIO_InitStruct.Pin = GPIO_PIN_12|GPIO_PIN_13|GPIO_PIN_14;
-  GPIO_InitStruct.Mode = GPIO_MODE_IT_FALLING;
-  GPIO_InitStruct.Pull = GPIO_PULLUP;
+  /*Configure GPIO pins : MC5_Pin MC6_Pin MC7_Pin MC8_Pin
+                           MC4_Pin */
+  GPIO_InitStruct.Pin = MC5_Pin|MC6_Pin|MC7_Pin|MC8_Pin
+                          |MC4_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
   /*Configure GPIO pin : SO0_Pin */
   GPIO_InitStruct.Pin = SO0_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
-  GPIO_InitStruct.Pull = GPIO_PULLUP;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_FALLING;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(SO0_GPIO_Port, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : SO1_Pin SO2_Pin SO3_Pin */
-  GPIO_InitStruct.Pin = SO1_Pin|SO2_Pin|SO3_Pin|GPIO_PIN_15;
-  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
-  GPIO_InitStruct.Pull = GPIO_PULLUP;
+  /*Configure GPIO pin : SO1_Pin */
+  GPIO_InitStruct.Pin = SO1_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING_FALLING;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(SO1_GPIO_Port, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : SO2_Pin SO3_Pin */
+  GPIO_InitStruct.Pin = SO2_Pin|SO3_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : IO0_Pin BUZZER_Pin */
-  GPIO_InitStruct.Pin = IO0_Pin|BUZZER_Pin;
+  /*Configure GPIO pin : BUZZER_Pin */
+  GPIO_InitStruct.Pin = BUZZER_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
-  HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+  HAL_GPIO_Init(BUZZER_GPIO_Port, &GPIO_InitStruct);
 
   /* EXTI interrupt init*/
-  HAL_NVIC_SetPriority(EXTI15_10_IRQn, 5, 0);
+  HAL_NVIC_SetPriority(EXTI3_IRQn, 6, 0);
+  HAL_NVIC_EnableIRQ(EXTI3_IRQn);
+
+  HAL_NVIC_SetPriority(EXTI4_IRQn, 7, 0);
+  HAL_NVIC_EnableIRQ(EXTI4_IRQn);
+
+  HAL_NVIC_SetPriority(EXTI9_5_IRQn, 7, 0);
+  HAL_NVIC_EnableIRQ(EXTI9_5_IRQn);
+
+  HAL_NVIC_SetPriority(EXTI15_10_IRQn, 6, 0);
   HAL_NVIC_EnableIRQ(EXTI15_10_IRQn);
 
 /* USER CODE BEGIN MX_GPIO_Init_2 */
@@ -570,6 +596,15 @@ static void MX_GPIO_Init(void)
 /* USER CODE BEGIN 4 */
 
 /* USER CODE END 4 */
+
+/* USER CODE BEGIN Header_StartDefaultTask */
+/**
+  * @brief  Function implementing the defaultTask thread.
+  * @param  argument: Not used
+  * @retval None
+  */
+/* USER CODE END Header_StartDefaultTask */
+
 /**
   * @brief  This function is executed in case of error occurrence.
   * @retval None

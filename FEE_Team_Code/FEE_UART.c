@@ -7,7 +7,6 @@
 int pi = 0;
 
 /***************************       FUNCTIONS       ****************************/
-extern int tem; 
 
 void FEE_UART_Innit(void)
 {	
@@ -76,21 +75,17 @@ void FEE_UART_Test(void)
 
 void send_uart(uint8_t data)
 {
-	tem = 12; 
 	HAL_UART_Transmit(&huart2,&data,1,20);
-	tem = 13; 
 }
 void pid_dc1(uint8_t chieu,uint8_t tocdo)
 {
-	tem = 9; 
 	send_uart((chieu<<7)|1);
 	send_uart(tocdo);
 	send_uart(255);
 	
 }
 void pid_dc2(uint8_t chieu,uint8_t tocdo)
-{
-	tem = 10; 
+{ 
 	send_uart((chieu<<7)|2);
 	send_uart(tocdo);
 	send_uart(255);
@@ -98,29 +93,8 @@ void pid_dc2(uint8_t chieu,uint8_t tocdo)
 
 void pid_dc3(uint8_t chieu,uint8_t tocdo)
 {
-	tem = 11; 
 	send_uart((chieu<<7)|3);
 	send_uart(tocdo);
 	send_uart(255);
 }
 
-//void pid_dc8(uint8_t chieu,uint8_t tocdo)
-//{
-//	send_uart((chieu<<7)|8);
-//	send_uart(tocdo);
-//	send_uart(255);
-//}
-
-//void pid_dc9(uint8_t chieu,uint8_t tocdo)
-//{
-//	send_uart((chieu<<7)|9);
-//	send_uart(tocdo);
-//	send_uart(255);
-//}
-
-//void pid_dc10(uint8_t chieu,uint8_t tocdo)
-//{
-//	send_uart((chieu<<7)|10);
-//	send_uart(tocdo);
-//	send_uart(255);
-//}

@@ -21,52 +21,32 @@ Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.0.8.0
 Dialog DLL:      TCM.DLL V1.48.0.0
  
 <h2>Project:</h2>
-D:\FEE\main_xilanh_cubeMx\MAIN_EX_V3_1\MDK-ARM\MAIN_EX_V3_1.uvprojx
-Project File Date:  01/16/2024
+D:\FEE\STM32F103_Main_Phu_2024\main_xilanh_cubeMx\MAIN_EX_V3_1\MDK-ARM\MAIN_EX_V3_1.uvprojx
+Project File Date:  03/11/2024
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 7 (build 960)', folder: 'D:\keilC\ARM\ARMCC\Bin'
 Build target 'MAIN_EX_V3_1'
-compiling FEE_Robot.c...
+compiling FEE_Tu_Dong.c...
 ../FEE_Team_Code/FEE_FLASH.h(24): warning:  #1-D: last line of file ends without a newline
   #endif
-..\Robot_code\FEE_Robot.c(19): warning:  #188-D: enumerated type mixed with another type
-  			HAL_GPIO_WritePin(GPIOA, GPIO_PIN_12, 1); 
-..\Robot_code\FEE_Robot.c(21): warning:  #188-D: enumerated type mixed with another type
-  			HAL_GPIO_WritePin(GPIOA, GPIO_PIN_11, 1); 
-..\Robot_code\FEE_Robot.c(23): warning:  #188-D: enumerated type mixed with another type
-  			HAL_GPIO_WritePin(GPIOA, GPIO_PIN_8, 1); 
-..\Robot_code\FEE_Robot.c(25): warning:  #188-D: enumerated type mixed with another type
-  			 HAL_GPIO_WritePin(GPIOB, GPIO_PIN_8, 1); 
-..\Robot_code\FEE_Robot.c(30): warning:  #188-D: enumerated type mixed with another type
-  				HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12, 1); 
-..\Robot_code\FEE_Robot.c(32): warning:  #188-D: enumerated type mixed with another type
-  			HAL_GPIO_WritePin(GPIOB, GPIO_PIN_13, 1); 
-..\Robot_code\FEE_Robot.c(34): warning:  #188-D: enumerated type mixed with another type
-  			HAL_GPIO_WritePin(GPIOB, GPIO_PIN_14, 1); 
-..\Robot_code\FEE_Robot.c(36): warning:  #188-D: enumerated type mixed with another type
-  			HAL_GPIO_WritePin(GPIOB, GPIO_PIN_15, 1); 
-..\Robot_code\FEE_Robot.c(43): warning:  #188-D: enumerated type mixed with another type
-  			HAL_GPIO_WritePin(GPIOA, GPIO_PIN_12, 0); 
-..\Robot_code\FEE_Robot.c(45): warning:  #188-D: enumerated type mixed with another type
-  			HAL_GPIO_WritePin(GPIOA, GPIO_PIN_11, 0); 
-..\Robot_code\FEE_Robot.c(47): warning:  #188-D: enumerated type mixed with another type
-  			HAL_GPIO_WritePin(GPIOA, GPIO_PIN_8, 0);
-..\Robot_code\FEE_Robot.c(49): warning:  #188-D: enumerated type mixed with another type
-  			 HAL_GPIO_WritePin(GPIOB, GPIO_PIN_8, 0); 
-..\Robot_code\FEE_Robot.c(54): warning:  #188-D: enumerated type mixed with another type
-  				HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12, 0); 
-..\Robot_code\FEE_Robot.c(56): warning:  #188-D: enumerated type mixed with another type
-  			HAL_GPIO_WritePin(GPIOB, GPIO_PIN_13, 0);
-..\Robot_code\FEE_Robot.c(58): warning:  #188-D: enumerated type mixed with another type
-  			HAL_GPIO_WritePin(GPIOB, GPIO_PIN_14, 0); 
-..\Robot_code\FEE_Robot.c(60): warning:  #188-D: enumerated type mixed with another type
-  			HAL_GPIO_WritePin(GPIOB, GPIO_PIN_15, 0); 
-..\Robot_code\FEE_Robot.c: 17 warnings, 0 errors
+../Robot_code/FEE_Function.h(31): warning:  #1295-D: Deprecated declaration khoi_tao_an_toan - give arg types
+  void khoi_tao_an_toan(); 
+../Core/Inc/main.h(172): warning:  #65-D: expected a ";"
+  };
+..\Robot_code\FEE_Tu_Dong.c: 3 warnings, 0 errors
+compiling FEE_RTOS.c...
+../FEE_Team_Code/FEE_FLASH.h(24): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Robot_code/FEE_Function.h(31): warning:  #1295-D: Deprecated declaration khoi_tao_an_toan - give arg types
+  void khoi_tao_an_toan(); 
+../Core/Inc/main.h(172): warning:  #65-D: expected a ";"
+  };
+..\FEE_Team_Code\FEE_RTOS.c: 3 warnings, 0 errors
 linking...
-Program Size: Code=13356 RO-data=472 RW-data=156 ZI-data=19420  
+Program Size: Code=23744 RO-data=472 RW-data=160 ZI-data=19416  
 FromELF: creating hex file...
-"MAIN_EX_V3_1\MAIN_EX_V3_1.axf" - 0 Error(s), 17 Warning(s).
+"MAIN_EX_V3_1\MAIN_EX_V3_1.axf" - 0 Error(s), 6 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -90,7 +70,7 @@ Package Vendor: Keil
 
    * Component: ARM::CMSIS:CORE:5.6.0
       Include file:  CMSIS\Core\Include\tz_context.h
-Build Time Elapsed:  00:00:02
+Build Time Elapsed:  00:00:06
 </pre>
 </body>
 </html>

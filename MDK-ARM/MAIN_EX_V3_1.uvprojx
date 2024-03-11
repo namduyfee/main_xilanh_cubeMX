@@ -584,16 +584,6 @@
               <FilePath>..\FEE_Team_Code\FEE_ADC.h</FilePath>
             </File>
             <File>
-              <FileName>FEE_Compass.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\FEE_Team_Code\FEE_Compass.c</FilePath>
-            </File>
-            <File>
-              <FileName>FEE_Compass.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\FEE_Team_Code\FEE_Compass.h</FilePath>
-            </File>
-            <File>
               <FileName>FEE_EXTI.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\FEE_Team_Code\FEE_EXTI.c</FilePath>
@@ -624,16 +614,6 @@
               <FilePath>..\FEE_Team_Code\FEE_LCD.h</FilePath>
             </File>
             <File>
-              <FileName>FEE_PES_Control.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\FEE_Team_Code\FEE_PES_Control.c</FilePath>
-            </File>
-            <File>
-              <FileName>FEE_PES_control.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\FEE_Team_Code\FEE_PES_control.h</FilePath>
-            </File>
-            <File>
               <FileName>FEE_RTOS.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\FEE_Team_Code\FEE_RTOS.c</FilePath>
@@ -662,6 +642,16 @@
               <FileName>FEE_FLASH.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\FEE_Team_Code\FEE_FLASH.h</FilePath>
+            </File>
+            <File>
+              <FileName>FEE_PES_Control.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\FEE_Team_Code\FEE_PES_Control.c</FilePath>
+            </File>
+            <File>
+              <FileName>FEE_PES_control.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\FEE_Team_Code\FEE_PES_control.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -697,6 +687,36 @@
               <FileName>FEE_Thread4.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Robot_code\FEE_Thread4.c</FilePath>
+            </File>
+            <File>
+              <FileName>FEE_Function.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Robot_code\FEE_Function.c</FilePath>
+            </File>
+            <File>
+              <FileName>FEE_Function.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Robot_code\FEE_Function.h</FilePath>
+            </File>
+            <File>
+              <FileName>FEE_Lai_Tay.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Robot_code\FEE_Lai_Tay.c</FilePath>
+            </File>
+            <File>
+              <FileName>FEE_Lai_Tay.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Robot_code\FEE_Lai_Tay.h</FilePath>
+            </File>
+            <File>
+              <FileName>FEE_Tu_Dong.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Robot_code\FEE_Tu_Dong.c</FilePath>
+            </File>
+            <File>
+              <FileName>FEE_Tu_Dong.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Robot_code\FEE_Tu_Dong.h</FilePath>
             </File>
           </Files>
         </Group>

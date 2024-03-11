@@ -14,7 +14,6 @@ extern UART_HandleTypeDef huart1;
 extern UART_HandleTypeDef huart2;
 extern UART_HandleTypeDef huart3;
 
-int tem = 0; 
 
 /* USER CODE BEGIN Header_StartDefaultTask */
 /**
@@ -30,16 +29,18 @@ void StartDefaultTask(void const * argument)
 //  MX_USB_DEVICE_Init();
   /* USER CODE BEGIN 5 */
   /* Infinite loop */
-	
-    pid_dc1(0,0);
-    pid_dc2(0,0);
-    pid_dc3(0,0); 
-	
+	initTimers(); 
+	trang_thai_init(); 
+	dong_co_init(); 
+
   for(;;)
   {
    osDelay(1);
-//		ve_vi_tri_0(); 
-  }
+		pid_dc1(FEE_RTOS_struct.Tay_1.chieu, FEE_RTOS_struct.Tay_1.toc_do);
+    pid_dc2(FEE_RTOS_struct.Tay_2.chieu, FEE_RTOS_struct.Tay_2.toc_do);
+    pid_dc3(FEE_RTOS_struct.Nang_ha.chieu, FEE_RTOS_struct.Nang_ha.toc_do); 
+			
+ }
   /* USER CODE END 5 */
 }
 

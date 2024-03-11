@@ -10,8 +10,17 @@
 extern struct FEE_RTOS_struct_def           FEE_RTOS_struct;
 
 /***************************       FUNCTIONS       ****************************/
-void control_xilanh(int xilanh_number, uint8_t trang_thai_xilanh); 
 
-void ve_vi_tri_0(void); 
+void dong_co_init(void); 
+void tu_dong_init(void); 
+void lai_tay_init(void); 
+void trang_thai_init(void); 
+
+void initTimers(void); 
+void configTIM1(void); 
+void configTIM3(void); 
+void configTIM4(void); 
 
 #endif
+
+

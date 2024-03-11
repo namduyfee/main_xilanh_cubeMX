@@ -62,4 +62,7 @@ main_ex_v3_1\main.o: ../Robot_code/FEE_Robot.h
 main_ex_v3_1\main.o: D:\keilC\ARM\ARMCC\Bin\..\include\stdlib.h
 main_ex_v3_1\main.o: D:\keilC\ARM\ARMCC\Bin\..\include\math.h
 main_ex_v3_1\main.o: ../FEE_Team_Code/FEE_FLASH.h
+main_ex_v3_1\main.o: ../Robot_code/FEE_Function.h
+main_ex_v3_1\main.o: ../Robot_code/FEE_Tu_Dong.h
+main_ex_v3_1\main.o: ../Robot_code/FEE_Lai_Tay.h
 main_ex_v3_1\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
