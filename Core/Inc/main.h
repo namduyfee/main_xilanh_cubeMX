@@ -80,10 +80,6 @@ void Error_Handler(void);
 #define IO4_GPIO_Port GPIOA
 #define IO5_Pin GPIO_PIN_1
 #define IO5_GPIO_Port GPIOA
-#define IO6_Pin GPIO_PIN_4
-#define IO6_GPIO_Port GPIOA
-#define IO7_Pin GPIO_PIN_5
-#define IO7_GPIO_Port GPIOA
 #define MC5_Pin GPIO_PIN_12
 #define MC5_GPIO_Port GPIOB
 #define MC6_Pin GPIO_PIN_13
@@ -101,9 +97,6 @@ void Error_Handler(void);
 #define SO0_Pin GPIO_PIN_15
 #define SO0_GPIO_Port GPIOA
 #define SO0_EXTI_IRQn EXTI15_10_IRQn
-#define SO1_Pin GPIO_PIN_3
-#define SO1_GPIO_Port GPIOB
-#define SO1_EXTI_IRQn EXTI3_IRQn
 #define SO2_Pin GPIO_PIN_4
 #define SO2_GPIO_Port GPIOB
 #define SO2_EXTI_IRQn EXTI4_IRQn
@@ -205,15 +198,19 @@ struct FEE_Trang_Thai_struct_def {
 	uint16_t count_delay_chong_troi_2;
 	uint16_t limit_delay_chong_troi_1; 
 	uint16_t limit_delay_chong_troi_2; 
-	
-	uint16_t count_suon_len_1; 
-	uint16_t count_suon_len_2; 
-	
-	uint16_t luu_count_suon_len_1; 
-	uint16_t luu_count_suon_len_2; 
+
 	
 	uint8_t khoi_dong_mem_tay_1; 
 	uint8_t khoi_dong_mem_tay_2; 
+	
+	uint8_t da_chong_troi; 
+	
+	uint8_t so_lan_trans; // so lan truyen toi da mot data 
+	uint8_t data_new; // data do co phai moi khong 
+	
+	
+	int goc_xoay_chong_troi_tay_1; 
+	int goc_xoay_chong_troi_tay_2; 
 	
 }; 
 
@@ -222,19 +219,32 @@ struct FEE_Trang_Thai_struct_def {
 struct FEE_Tu_Dong_struct_def {
 	
 	uint8_t stop_nang_ha; 
-	uint8_t vi_tri_nang_ha; 
+	int16_t vi_tri_nang_ha; 
 	uint8_t tha_lua; 
-	uint8_t di_tha_lua;
+	
+	// vi tri khong vi keo le lua 
+	uint8_t di_tha_lua_an_toan; 
+	// vi tri tha lua 
+	uint8_t nang_start_di_tha_lua;
+	// do diem tha lua 
+	uint8_t vi_tri_check_tha_lua; 
+	
 	uint8_t gap_lua_len; 
 	uint8_t khoi_tao_an_toan; 
 	uint8_t kep_lua; 
 	uint8_t tranh_cam_bien; 
+	uint8_t kep_lua_tren_ro; 
+	uint8_t nang_lua_khoi_ro; 
 	uint8_t tu_dong_number; 
+	
+	uint8_t tranh_va_lua; 			
 	
 	uint8_t day_keo_xilanh_an_toan[20]; 
 	uint8_t check_cam_bien_td_tay_1[20]; 
 	uint8_t check_cam_bien_td_tay_2[20]; 
 	uint8_t check_cam_bien_td_nang_ha[20]; 
+	char mau_san; 
+	uint8_t nang_ha_tha_lua[20]; 
 
 }; 
 

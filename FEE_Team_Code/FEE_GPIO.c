@@ -73,7 +73,7 @@ void FEE_GPIO_Innit(void)
 void FEE_GPIO_Get_Data(void)
 {
 	FEE_RTOS_struct.H_GPIO.S1 = HAL_GPIO_ReadPin(SO0_GPIO_Port, SO0_Pin);
-	FEE_RTOS_struct.H_GPIO.S2 = HAL_GPIO_ReadPin(SO1_GPIO_Port, SO1_Pin);
+//	FEE_RTOS_struct.H_GPIO.S2 = HAL_GPIO_ReadPin(SO1_GPIO_Port, SO1_Pin);
 	FEE_RTOS_struct.H_GPIO.S3 = HAL_GPIO_ReadPin(SO2_GPIO_Port, SO2_Pin);
     FEE_RTOS_struct.H_GPIO.S4 = HAL_GPIO_ReadPin(SO3_GPIO_Port, SO3_Pin);
 

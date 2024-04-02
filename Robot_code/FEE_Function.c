@@ -1,6 +1,10 @@
 
 #include "FEE_Function.h"
 
+#define ngoai_cam_bien 1 
+#define trong_cam_bien 0
+
+
 uint8_t mode_tem; 
 
 
@@ -22,6 +26,23 @@ void reset_check_xoay_tay_1(void) {
 void reset_check_xoay_tay_2(void) {
 	TIM3->CNT = 0; 
 }
+
+
+void reset_nang_ha(void) {
+	TIM2->CNT = 0; 
+}
+
+
+int check_nang_ha(float second_limit) {
+	float tem1 =  5000 * second_limit; 
+	int tem2 = (int)tem1; 
+	if(TIM2->CNT > tem2) 
+		return 1; 
+	else 
+		return 0; 
+	
+}
+
 
 int check_xoay_tay_1(float second_limit) {
 	float tem1 =  5000 * second_limit; 
@@ -96,27 +117,28 @@ void khoi_tao_tu_dong(void) {
 			mode_tem = FEE_RTOS_struct.TrangThai.mode_run; 
 			FEE_RTOS_struct.TrangThai.mode_run = 2; 
 			
-			if(GPIOB->IDR & 1<<5)
+			if((GPIOB->IDR & 1<<5) == trong_cam_bien)
 				xoay_trai(1, 0);
 			else 
-				xoay_trai(1, 15);
+				xoay_trai(1, 20);
 			
-			delayUs(5000); 
+			osDelay(5);
 			
-			if(GPIOB->IDR & 1<<4)
+			if((GPIOB->IDR & 1<<4) == trong_cam_bien)
 				xoay_trai(2, 0); 
 			else
-				xoay_trai(2, 15); 
+				xoay_trai(2, 20); 
 			
-			delayUs(5000);
+			osDelay(5);
 			
 			if(GPIOA->IDR & 1<<15) {
 				FEE_RTOS_struct.TrangThai.home = 0; 
-				ha_canh_tay(55); 
+				ha_canh_tay(40); 
 			}
-			else 
+			else {
+				
 				ha_canh_tay(0); 
-			
+			}
 			if(GPIOA->IDR & 1<<15) {}
 				
 			else {
@@ -132,30 +154,24 @@ void khoi_tao_tu_dong(void) {
 
 
 void khoi_tao_kep_lua(void) {
-	
-	FEE_RTOS_struct.TuDong.stop_nang_ha = FEE_RTOS_struct.TuDong.kep_lua;
-	
-	if(FEE_RTOS_struct.TuDong.vi_tri_nang_ha < FEE_RTOS_struct.TuDong.kep_lua) {
-		FEE_RTOS_struct.TrangThai.len_xuong = 1;
-		nang_canh_tay(70);
-	}
-	else if(FEE_RTOS_struct.TuDong.vi_tri_nang_ha > FEE_RTOS_struct.TuDong.kep_lua) {
-		FEE_RTOS_struct.TrangThai.len_xuong = 0; 
-		ha_canh_tay(70);
-	}
+	FEE_RTOS_struct.TrangThai.home = 0;
+	ha_canh_tay(40); 
 }
+
 
 void khoi_tao_an_toan(void) {
 	
 	FEE_RTOS_struct.TuDong.stop_nang_ha = FEE_RTOS_struct.TuDong.khoi_tao_an_toan;
 	
+	reset_nang_ha(); 
+	
 	if(FEE_RTOS_struct.TuDong.vi_tri_nang_ha < FEE_RTOS_struct.TuDong.khoi_tao_an_toan) {
 		FEE_RTOS_struct.TrangThai.len_xuong = 1;
-		nang_canh_tay(70);
+		nang_canh_tay(30);
 	}
 	else if(FEE_RTOS_struct.TuDong.vi_tri_nang_ha > FEE_RTOS_struct.TuDong.khoi_tao_an_toan) {
 		FEE_RTOS_struct.TrangThai.len_xuong = 0; 
-		ha_canh_tay(70);
+		ha_canh_tay(30);
 	}	
 	
 }
@@ -168,66 +184,70 @@ void control_xilanh(int xilanh_number, uint8_t trang_thai_xilanh) {
 		FEE_RTOS_struct.LaiTay.flag_xilanh[xilanh_number] = 1;
 		
 		if(xilanh_number == 1) {
-			HAL_GPIO_WritePin(GPIOA, GPIO_PIN_12, 1); 
+		HAL_GPIO_WritePin(GPIOB, GPIO_PIN_1, 0); 
+
 		}
 		if(xilanh_number == 2)  {
-			HAL_GPIO_WritePin(GPIOA, GPIO_PIN_11, 1); 
+			HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, 1); 
 		}
 		if(xilanh_number == 3) 
-			HAL_GPIO_WritePin(GPIOA, GPIO_PIN_8, 1); 
+			HAL_GPIO_WritePin(GPIOB, GPIO_PIN_2, 1); 
+		
 		if(xilanh_number == 4) 
 			 HAL_GPIO_WritePin(GPIOB, GPIO_PIN_8, 1); 
 		
 		// tay 2 
 		
 		if(xilanh_number == 5) 
-				HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12, 1); 
+			HAL_GPIO_WritePin(GPIOA, GPIO_PIN_7, 1); 		
 		if(xilanh_number == 6) 
-			HAL_GPIO_WritePin(GPIOB, GPIO_PIN_13, 1); 
+			HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, 0); 
 		if(xilanh_number == 7) 
-			HAL_GPIO_WritePin(GPIOB, GPIO_PIN_14, 1); 
+			HAL_GPIO_WritePin(GPIOA, GPIO_PIN_4, 0); 
 		if(xilanh_number == 8) 
-			HAL_GPIO_WritePin(GPIOB, GPIO_PIN_15, 1); 
-		
+				HAL_GPIO_WritePin(GPIOA, GPIO_PIN_6, 0); 		
 	}
 	//mo ra  
 	if(trang_thai_xilanh == 0) {
 		
 		FEE_RTOS_struct.LaiTay.flag_xilanh[xilanh_number] = 0;
 		
-		if(xilanh_number == 1) 
-			HAL_GPIO_WritePin(GPIOA, GPIO_PIN_12, 0); 
-		if(xilanh_number == 2)  
-			HAL_GPIO_WritePin(GPIOA, GPIO_PIN_11, 0); 
+		if(xilanh_number == 1) {
+			HAL_GPIO_WritePin(GPIOB, GPIO_PIN_1, 1); 
+ 
+		}
+		if(xilanh_number == 2)  {
+			HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, 0); 
+		}
 		if(xilanh_number == 3) 
-			HAL_GPIO_WritePin(GPIOA, GPIO_PIN_8, 0);
+			HAL_GPIO_WritePin(GPIOB, GPIO_PIN_2, 0); 
+		
 		if(xilanh_number == 4) 
 			 HAL_GPIO_WritePin(GPIOB, GPIO_PIN_8, 0); 
 		
 		// tay 2 
-		
+	
 		if(xilanh_number == 5) 
-				HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12, 0); 
+			HAL_GPIO_WritePin(GPIOA, GPIO_PIN_7, 0); 		
 		if(xilanh_number == 6) 
-			HAL_GPIO_WritePin(GPIOB, GPIO_PIN_13, 0);
+			HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, 1); 
 		if(xilanh_number == 7) 
-			HAL_GPIO_WritePin(GPIOB, GPIO_PIN_14, 0); 
+			HAL_GPIO_WritePin(GPIOA, GPIO_PIN_4, 1); 
 		if(xilanh_number == 8) 
-			HAL_GPIO_WritePin(GPIOB, GPIO_PIN_15, 0); 
-		
+				HAL_GPIO_WritePin(GPIOA, GPIO_PIN_6, 1); 		
 	}
 }
 
 
 void xoay_phai(uint8_t tay_number, uint16_t toc_do) {
 	if(tay_number ==1) {
-		FEE_RTOS_struct.Tay_1.chieu = 0; 
+		FEE_RTOS_struct.Tay_1.chieu = 1; 
 		FEE_RTOS_struct.Tay_1.toc_do = toc_do; 
 		FEE_RTOS_struct.TrangThai.chieu_xoay_1 = 1; 
 	}
 	
 	if(tay_number ==2) {
-		FEE_RTOS_struct.Tay_2.chieu = 0; 
+		FEE_RTOS_struct.Tay_2.chieu = 1; 
 		FEE_RTOS_struct.Tay_2.toc_do = toc_do; 
 		FEE_RTOS_struct.TrangThai.chieu_xoay_2 = 1; 
 	}
@@ -236,13 +256,13 @@ void xoay_phai(uint8_t tay_number, uint16_t toc_do) {
 
 void xoay_trai(uint8_t tay_number, uint16_t toc_do) {
 	if(tay_number ==1) {
-		FEE_RTOS_struct.Tay_1.chieu = 1; 
+		FEE_RTOS_struct.Tay_1.chieu = 0; 
 		FEE_RTOS_struct.Tay_1.toc_do = toc_do; 
 		FEE_RTOS_struct.TrangThai.chieu_xoay_1 =0; 
 	}
 	
 	if(tay_number ==2) {
-		FEE_RTOS_struct.Tay_2.chieu = 1; 
+		FEE_RTOS_struct.Tay_2.chieu = 0; 
 		FEE_RTOS_struct.Tay_2.toc_do = toc_do;
 		FEE_RTOS_struct.TrangThai.chieu_xoay_2 = 0; 		
 	}
@@ -294,6 +314,34 @@ void nha(uint8_t chan_le) {
 }
 
 
+void start_dc_keo_sung(void) {
+	
+	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_8, 1); 
+}
 
+void stop_dc_keo_sung(void) {
+	
+	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_8, 0); 
+}
+void kep_bong(void) {
+	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_14, 0); 
+}
 
+void nha_bong(void) {
+	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_14, 1); 
+}
 
+void nang_tay_kep_bong(void) {
+	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_15, 0); 
+}
+
+void ha_tay_kep_bong(void) {
+	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_15, 1); 
+}
+void day_tay_gap_lua(void) {
+	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_13, 1); 
+}
+
+void thu_tay_gap_lua(void) {
+	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_13, 0); 
+}

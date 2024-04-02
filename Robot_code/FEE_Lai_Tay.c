@@ -1,9 +1,22 @@
 
 #include "FEE_Lai_Tay.h"
 
-#define toc_do_lai_tay_1 40
-#define toc_do_lai_tay_2 40
-#define toc_do_lai_tay_nang_ha 70
+#define toc_do_lai_tay_1 150
+#define toc_do_lai_tay_2 150
+#define toc_do_lai_tay_nang_ha 250
+
+
+uint8_t trang_thai_xilanh_day_keo = 0; 
+uint8_t flag_trang_thai_xilanh_day_keo = 0; 
+
+uint8_t trang_thai_dong_co_ban_bong = 0; 
+uint8_t flag_trang_thai_dong_co_ban_bong = 0; 
+
+uint8_t trang_thai_xilanh_kep_bong = 0; 
+uint8_t flag_trang_thai_xilanh_kep_bong = 0; 
+
+uint8_t trang_thai_xilanh_nang_ha_tay_kep_bong = 0; 
+uint8_t flag_trang_thai_xilanh_nang_ha_tay_kep_bong  = 0; 
 
 void nut_lai_tay(void) {
 	
@@ -136,15 +149,99 @@ void nut_lai_tay(void) {
 }
 
 void ham_lai_tay(void) {
+	// day keo tay gap 
+	if(FEE_PES.R1 == 0 && FEE_PES.L1 == 0) {
+		if(flag_trang_thai_xilanh_day_keo == 0) {
+			if(trang_thai_xilanh_day_keo == 0) 
+				trang_thai_xilanh_day_keo = 1; 
+			else 
+				trang_thai_xilanh_day_keo = 0; 
+			
+			if(trang_thai_xilanh_day_keo == 0)
+				thu_tay_gap_lua(); 
+			else if(trang_thai_xilanh_day_keo == 1)
+				day_tay_gap_lua(); 
+ 
+			flag_trang_thai_xilanh_day_keo = 1; 
+		}
+	}
+	else 
+		flag_trang_thai_xilanh_day_keo = 0; 
+	
+	// nang ha tay kep bong 
+	if(FEE_PES_Btn.S22 == 0 && FEE_PES_Btn.S19 == 0) {
+		if(flag_trang_thai_xilanh_nang_ha_tay_kep_bong == 0) {
+			if(trang_thai_xilanh_nang_ha_tay_kep_bong == 0) 
+				trang_thai_xilanh_nang_ha_tay_kep_bong = 1; 
+			else 
+				trang_thai_xilanh_nang_ha_tay_kep_bong = 0; 
+			
+			if(trang_thai_xilanh_nang_ha_tay_kep_bong == 0)
+				ha_tay_kep_bong(); 
+			else if(trang_thai_xilanh_nang_ha_tay_kep_bong == 1)
+				nang_tay_kep_bong(); 
+			
+			flag_trang_thai_xilanh_nang_ha_tay_kep_bong = 1; 
+		}
+	}
+	else 
+		flag_trang_thai_xilanh_nang_ha_tay_kep_bong = 0; 	
+	
+	// kep bong 
+	if(FEE_PES_Btn.S22 == 0 && FEE_PES_Btn.S18 == 0) {
+		if(flag_trang_thai_xilanh_kep_bong == 0) {
+			if(trang_thai_xilanh_kep_bong == 0) 
+				trang_thai_xilanh_kep_bong = 1; 
+			else 
+				trang_thai_xilanh_kep_bong = 0; 
+			
+			if(trang_thai_xilanh_kep_bong == 0)
+				nha_bong(); 
+			else if(trang_thai_xilanh_kep_bong == 1)
+				kep_bong(); 
+			
+			flag_trang_thai_xilanh_kep_bong = 1; 
+		}
+	}
+	else 
+		flag_trang_thai_xilanh_kep_bong = 0; 		
+	
+	// dong co keo sung 
+	if(FEE_PES_Btn.S22 == 0 && FEE_PES_Btn.S20 == 0) {
+		if(flag_trang_thai_dong_co_ban_bong == 0) {
+			if(trang_thai_dong_co_ban_bong == 0) 
+				trang_thai_dong_co_ban_bong = 1; 
+			else 
+				trang_thai_dong_co_ban_bong = 0; 
+			
+			if(trang_thai_dong_co_ban_bong == 0)
+				stop_dc_keo_sung(); 
+			else if(trang_thai_dong_co_ban_bong == 1)
+				start_dc_keo_sung(); 
+			
+			flag_trang_thai_dong_co_ban_bong = 1; 
+		}
+	}
+	else 
+		flag_trang_thai_dong_co_ban_bong = 0; 		
+	
+	
+	
+	
+	
 	// nang_ha 			
 	if(FEE_RTOS_struct.LaiTay.flag_nang == 1) {
+		
+			
 		nang_canh_tay(toc_do_lai_tay_nang_ha);
 		FEE_RTOS_struct.LaiTay.check_start_nang_ha = 1; 
+		
 	}
 
 	else if(FEE_RTOS_struct.LaiTay.flag_ha == 1) {
 		if(GPIOA->IDR & 1<<15)  {
 			ha_canh_tay(toc_do_lai_tay_nang_ha);
+						
 			FEE_RTOS_struct.LaiTay.check_start_nang_ha = 1; 
 		}
 		else {
@@ -208,10 +305,3 @@ void ham_lai_tay(void) {
 	}
 	
 }
-
-
-
-
-
-
-

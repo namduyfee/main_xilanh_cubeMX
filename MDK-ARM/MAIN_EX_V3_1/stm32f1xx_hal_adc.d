@@ -27,6 +27,4 @@ main_ex_v3_1\stm32f1xx_hal_adc.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_
 main_ex_v3_1\stm32f1xx_hal_adc.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h
 main_ex_v3_1\stm32f1xx_hal_adc.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h
 main_ex_v3_1\stm32f1xx_hal_adc.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h
-main_ex_v3_1\stm32f1xx_hal_adc.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h
-main_ex_v3_1\stm32f1xx_hal_adc.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h
 main_ex_v3_1\stm32f1xx_hal_adc.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h

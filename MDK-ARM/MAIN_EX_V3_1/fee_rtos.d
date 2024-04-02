@@ -23,14 +23,10 @@ main_ex_v3_1\fee_rtos.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.
 main_ex_v3_1\fee_rtos.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h
 main_ex_v3_1\fee_rtos.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h
 main_ex_v3_1\fee_rtos.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h
-main_ex_v3_1\fee_rtos.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc.h
-main_ex_v3_1\fee_rtos.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc_ex.h
 main_ex_v3_1\fee_rtos.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h
 main_ex_v3_1\fee_rtos.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h
 main_ex_v3_1\fee_rtos.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h
 main_ex_v3_1\fee_rtos.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h
-main_ex_v3_1\fee_rtos.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h
-main_ex_v3_1\fee_rtos.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h
 main_ex_v3_1\fee_rtos.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
 main_ex_v3_1\fee_rtos.o: ../FEE_Team_Code/FEE_RTOS.h
 main_ex_v3_1\fee_rtos.o: ../FEE_Team_Code/FEE_ADC.h

@@ -9,12 +9,12 @@
 
 extern struct FEE_RTOS_struct_def	FEE_RTOS_struct;
 
-extern ADC_HandleTypeDef hadc1;
+//extern ADC_HandleTypeDef hadc1;
 extern DMA_HandleTypeDef hdma_adc1;
 
 extern I2C_HandleTypeDef hi2c1;
 
-extern TIM_HandleTypeDef htim2;
+//extern TIM_HandleTypeDef htim2;
 
 extern UART_HandleTypeDef huart1;
 extern UART_HandleTypeDef huart2;
