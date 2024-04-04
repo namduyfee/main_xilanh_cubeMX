@@ -37,13 +37,13 @@ void tu_dong_init(void) {
 	FEE_RTOS_struct.TuDong.khoi_tao_an_toan = 4; 
 	FEE_RTOS_struct.TuDong.tha_lua = 38; 																									// tha lua vao kho 
 	FEE_RTOS_struct.TuDong.gap_lua_len = 28; 																						// vi tri tren mlo lua 
-	FEE_RTOS_struct.TuDong.di_tha_lua_an_toan = 10; 																// tranh lua keo le 
-	FEE_RTOS_struct.TuDong.nang_start_di_tha_lua = 10; 
+	FEE_RTOS_struct.TuDong.di_tha_lua_an_toan = 8; 																// tranh lua keo le 
+	FEE_RTOS_struct.TuDong.nang_start_di_tha_lua = 8; 
 	FEE_RTOS_struct.TuDong.vi_tri_check_tha_lua = 8; 																	// vi tri ngam vao diem tha lua 	
-	FEE_RTOS_struct.TuDong.tranh_cam_bien = 34; 																			// tranh cham sw, cam bien 
+	FEE_RTOS_struct.TuDong.tranh_cam_bien = 40; 																			// tranh cham sw, cam bien 
 	FEE_RTOS_struct.TuDong.kep_lua_tren_ro = 22; 
 	FEE_RTOS_struct.TuDong.nang_lua_khoi_ro = 38; 
-	FEE_RTOS_struct.TuDong.tranh_va_lua = 39; 
+	FEE_RTOS_struct.TuDong.tranh_va_lua = 41; 
 	
 	for(int i = 0 ; i < 20; i++) {
 		FEE_RTOS_struct.TuDong.day_keo_xilanh_an_toan[i] = 0; 
@@ -130,6 +130,8 @@ void trang_thai_init(void) {
 	
 	FEE_RTOS_struct.TrangThai.goc_xoay_chong_troi_tay_1 = 0; 
 	FEE_RTOS_struct.TrangThai.goc_xoay_chong_troi_tay_2 = 0; 
+	
+	FEE_RTOS_struct.TrangThai.enable_count_nang_ha = 0; 
 	
 }
 

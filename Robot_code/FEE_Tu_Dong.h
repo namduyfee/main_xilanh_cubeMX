@@ -24,8 +24,8 @@ void tu_dong_7(void);
 void tu_dong_8(void); 
 void tu_dong_9(void); 
 void tu_dong_10(void); 
-void tu_dong_11_1(void); 
-void tu_dong_11_2(void); 
+void tu_dong_11_1(int vi_tri_can_den); 
+void tu_dong_11_2(int vi_tri_can_den); 
 
 void tu_dong_xoay_tha_90(void); 
 void den_vi_tri_kep_lua(uint16_t toc_do); 

@@ -19,8 +19,8 @@ uint8_t khoi_tao = 0;
 #define thoi_gian_tha_troi_tay_2 10000
 
 #define thoi_gian_chac_chan_dem_nang_ha 0.047
-#define thoi_gian_chac_chan_dem_tay 0.29
-#define thoi_gian_chac_chan_dem_tay_lan_2 0.47
+#define thoi_gian_chac_chan_dem_tay 0.25
+#define thoi_gian_chac_chan_dem_tay_lan_2 0.43
 
 extern uint8_t td11_1; 
 extern uint8_t mode_tem; 
@@ -90,23 +90,23 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 			
 			else if(1 == FEE_RTOS_struct.TrangThai.mode_run) {
 				
-				if((1 == FEE_RTOS_struct.TuDong.tu_dong_number) && (FEE_RTOS_struct.TuDong.vi_tri_nang_ha >= (FEE_RTOS_struct.TuDong.gap_lua_len + 8) && 0 == FEE_RTOS_struct.TuDong.day_keo_xilanh_an_toan[0]) 
+				if((1 == FEE_RTOS_struct.TuDong.tu_dong_number) && (FEE_RTOS_struct.TuDong.vi_tri_nang_ha >= (FEE_RTOS_struct.TuDong.gap_lua_len + 4) && 0 == FEE_RTOS_struct.TuDong.day_keo_xilanh_an_toan[0]) 
 					&& (FEE_RTOS_struct.TrangThai.len_xuong == 1)) {
 						FEE_RTOS_struct.TuDong.day_keo_xilanh_an_toan[0] = 1; 
 				}
 					
-				if( (1 == FEE_RTOS_struct.TuDong.tu_dong_number) && (FEE_RTOS_struct.TuDong.vi_tri_nang_ha >= (FEE_RTOS_struct.TuDong.tranh_cam_bien - 2)) && FEE_RTOS_struct.TuDong.day_keo_xilanh_an_toan[0] == 1
+				if( (1 == FEE_RTOS_struct.TuDong.tu_dong_number) && (FEE_RTOS_struct.TuDong.vi_tri_nang_ha >= (FEE_RTOS_struct.TuDong.tha_lua  - 4)) && FEE_RTOS_struct.TuDong.day_keo_xilanh_an_toan[0] == 1
 					&& (FEE_RTOS_struct.TrangThai.len_xuong == 1)) {
 					thu_tay_gap_lua(); 
 				}			
 					
-				if( (4 == FEE_RTOS_struct.TuDong.tu_dong_number) && (FEE_RTOS_struct.TuDong.vi_tri_nang_ha >= (FEE_RTOS_struct.TuDong.tranh_cam_bien - 4)) && FEE_RTOS_struct.TuDong.day_keo_xilanh_an_toan[4] == 1
+				if( (4 == FEE_RTOS_struct.TuDong.tu_dong_number) && (FEE_RTOS_struct.TuDong.vi_tri_nang_ha >= (FEE_RTOS_struct.TuDong.tranh_cam_bien - 8)) && FEE_RTOS_struct.TuDong.day_keo_xilanh_an_toan[4] == 1
 					&& (FEE_RTOS_struct.TrangThai.len_xuong == 1)) {
 					FEE_RTOS_struct.TuDong.day_keo_xilanh_an_toan[4] = 2; 
 				}
 					
 				
-				if( (4 == FEE_RTOS_struct.TuDong.tu_dong_number) && (FEE_RTOS_struct.TuDong.vi_tri_nang_ha >= (FEE_RTOS_struct.TuDong.gap_lua_len + 8)) && FEE_RTOS_struct.TuDong.day_keo_xilanh_an_toan[4] == 0
+				if( (4 == FEE_RTOS_struct.TuDong.tu_dong_number) && (FEE_RTOS_struct.TuDong.vi_tri_nang_ha >= (FEE_RTOS_struct.TuDong.gap_lua_len + 4)) && FEE_RTOS_struct.TuDong.day_keo_xilanh_an_toan[4] == 0
 					&& (FEE_RTOS_struct.TrangThai.len_xuong == 1)) {
 					FEE_RTOS_struct.TuDong.day_keo_xilanh_an_toan[4] = 1; 
 				}
@@ -229,7 +229,7 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 				else if (2 == FEE_RTOS_struct.TuDong.tu_dong_number && 0 != FEE_RTOS_struct.TrangThai.done[2]) 
 					FEE_RTOS_struct.TuDong.check_cam_bien_td_tay_2[2] = 1; 
 				
-				else if(4 == FEE_RTOS_struct.TuDong.tu_dong_number && FEE_RTOS_struct.TrangThai.done[4] == 2) 
+				else if(4 == FEE_RTOS_struct.TuDong.tu_dong_number && (FEE_RTOS_struct.TrangThai.done[4] == 2 || FEE_RTOS_struct.TrangThai.done[4] == 3)) 
 					FEE_RTOS_struct.TuDong.check_cam_bien_td_tay_2[4] = 1; 
 				
 				else if(7 == FEE_RTOS_struct.TuDong.tu_dong_number && 2 == FEE_RTOS_struct.TrangThai.done[7])
@@ -360,7 +360,7 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 				else if (2 == FEE_RTOS_struct.TuDong.tu_dong_number && 0 != FEE_RTOS_struct.TrangThai.done[2]) 
 					FEE_RTOS_struct.TuDong.check_cam_bien_td_tay_1[2] = 1; 
 				
-				else if(4 == FEE_RTOS_struct.TuDong.tu_dong_number && FEE_RTOS_struct.TrangThai.done[4] == 2) 
+				else if(4 == FEE_RTOS_struct.TuDong.tu_dong_number && (FEE_RTOS_struct.TrangThai.done[4] == 2 || FEE_RTOS_struct.TrangThai.done[4] == 3)) 
 					FEE_RTOS_struct.TuDong.check_cam_bien_td_tay_1[4] = 1; 
 				
 				else if(7 == FEE_RTOS_struct.TuDong.tu_dong_number && 2 == FEE_RTOS_struct.TrangThai.done[7])
@@ -522,6 +522,12 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 					FEE_RTOS_struct.TrangThai.done[5] = 0;
 				}
 			}
+			
+			if(rx_data == 'M') {
+				if(0 == FEE_RTOS_struct.TrangThai.comple_reciver[6]) {
+					FEE_RTOS_struct.TrangThai.comple_reciver[6] = 1; 
+				}
+			}	
 			
 			if(rx_data == '1') {
 				if(0 == FEE_RTOS_struct.TrangThai.comple_reciver[7]) {

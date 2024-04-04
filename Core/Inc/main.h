@@ -212,6 +212,8 @@ struct FEE_Trang_Thai_struct_def {
 	int goc_xoay_chong_troi_tay_1; 
 	int goc_xoay_chong_troi_tay_2; 
 	
+	uint8_t enable_count_nang_ha; 
+	
 }; 
 
 // thong so tu dong 

@@ -166,10 +166,10 @@ void StartTask04(void const * argument)
 			
 				if(0 == FEE_RTOS_struct.TrangThai.done[4]) {
 					day_tay_gap_lua();
-					osDelay(600); 
 				}
 				
 				if(0 == FEE_RTOS_struct.TrangThai.done[4] && 1 == FEE_RTOS_struct.TuDong.check_cam_bien_td_nang_ha[3]) {
+					osDelay(600); 
 					tu_dong_4(); 
 					FEE_RTOS_struct.TrangThai.done[4] = 1; 
 				}
@@ -179,8 +179,7 @@ void StartTask04(void const * argument)
 					FEE_RTOS_struct.TrangThai.done[4] = 2; 
 				}
 				
-				if(1 == FEE_RTOS_struct.TuDong.check_cam_bien_td_tay_1[4] && 1 == FEE_RTOS_struct.TuDong.check_cam_bien_td_tay_2[4] && 0 == FEE_RTOS_struct.TrangThai.da_chong_troi 
-					&& FEE_RTOS_struct.TrangThai.done[4] == 2) {
+				if(1 == FEE_RTOS_struct.TuDong.check_cam_bien_td_tay_1[4] && 1 == FEE_RTOS_struct.TuDong.check_cam_bien_td_tay_2[4] && 0 == FEE_RTOS_struct.TrangThai.da_chong_troi) {
 						FEE_RTOS_struct.TrangThai.da_chong_troi = 1; 
 						osDelay(thoi_gian_chong_troi); 
 						chong_troi(0); 
@@ -207,11 +206,11 @@ void StartTask04(void const * argument)
 				
 				if(0 == FEE_RTOS_struct.TrangThai.done[5]) {
 					day_tay_gap_lua(); 
-					osDelay(500); 
 					FEE_RTOS_struct.TrangThai.done[5] = 1; 
 				}
 				
 				if(FEE_RTOS_struct.TrangThai.done[5] == 1) {
+					osDelay(950); 
 					den_vi_tri_kep_lua(250); 
 					FEE_RTOS_struct.TrangThai.done[5] = 2; 
 				}
@@ -223,31 +222,25 @@ void StartTask04(void const * argument)
 			/************************** tu dong 6 *************************/
 			
 			else if(6 == FEE_RTOS_struct.TuDong.tu_dong_number) {
-				//  && FEE_RTOS_struct.TrangThai.done[5] == 2
+
 				if(0 == FEE_RTOS_struct.TrangThai.done[6]) {
 					
 					tu_dong_6();
 					FEE_RTOS_struct.TrangThai.done[6] = 1; 
 				}
-				if( 1 == FEE_RTOS_struct.TuDong.check_cam_bien_td_nang_ha[6] && (3 != FEE_RTOS_struct.TrangThai.done[6])) {
+				if(1 == FEE_RTOS_struct.TuDong.check_cam_bien_td_nang_ha[6]) {
 					
 					tx_data = 'c'; 
-					so_lan_trans(30); 
-					
-					if(1 == FEE_RTOS_struct.TrangThai.done[6])
-						reset_check_xoay_tay_1(); 
+					so_lan_trans(20); 
+				
 					FEE_RTOS_struct.TrangThai.done[6] = 2; 
-					
 				}
-				if(2 == FEE_RTOS_struct.TrangThai.done[6]) {
-					
-					// thoi gian robot di chuyen ra khoi kho lua 
-					if(1 == check_xoay_tay_1(5)) {
-						
-						nang_ha_tay_gap_tu_dong(FEE_RTOS_struct.TuDong.nang_start_di_tha_lua, 100); 					
+				
+				if(2 == FEE_RTOS_struct.TrangThai.done[6] && FEE_RTOS_struct.TrangThai.comple_reciver[6] == 1) {
+						osDelay(500); 
+						nang_ha_tay_gap_tu_dong(FEE_RTOS_struct.TuDong.nang_start_di_tha_lua, 80); 					
 						FEE_RTOS_struct.TrangThai.done[6] = 3; 
-						
-					}
+					
 				}
 			}
 			
@@ -257,6 +250,13 @@ void StartTask04(void const * argument)
 			else if(7 == FEE_RTOS_struct.TuDong.tu_dong_number) {
 				
 				if(0 == FEE_RTOS_struct.TrangThai.done[7] && 0 == FEE_RTOS_struct.TuDong.nang_ha_tha_lua[7]) {
+					
+					if(HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_15) == 0) {
+						nang_canh_tay(90); 
+						while(FEE_RTOS_struct.TuDong.vi_tri_nang_ha < 5) 
+							osDelay(1); 
+					}
+					
 					
 					den_vi_tri_kep_lua(250); 
 					FEE_RTOS_struct.TuDong.nang_ha_tha_lua[7] = 1; 
@@ -319,6 +319,13 @@ void StartTask04(void const * argument)
 			else if(8 == FEE_RTOS_struct.TuDong.tu_dong_number) {
 				
 				if(0 == FEE_RTOS_struct.TrangThai.done[8] && 0 == FEE_RTOS_struct.TuDong.nang_ha_tha_lua[8]) {
+					
+					if(HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_15) == 0) {
+						nang_canh_tay(90); 
+						while(FEE_RTOS_struct.TuDong.vi_tri_nang_ha < 5) 
+							osDelay(1); 
+					}
+					
 					den_vi_tri_kep_lua(250); 
 					FEE_RTOS_struct.TuDong.nang_ha_tha_lua[8] = 1; 
 				}
@@ -397,6 +404,13 @@ void StartTask04(void const * argument)
 			else if(9 == FEE_RTOS_struct.TuDong.tu_dong_number) {			
 				
 				if(0 == FEE_RTOS_struct.TrangThai.done[9] && 0 == FEE_RTOS_struct.TuDong.nang_ha_tha_lua[9]) {
+					
+					if(HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_15) == 0) {
+						nang_canh_tay(90); 
+						while(FEE_RTOS_struct.TuDong.vi_tri_nang_ha < 5) 
+							osDelay(1); 
+					}				
+					
 					den_vi_tri_kep_lua(250); 
 					FEE_RTOS_struct.TuDong.nang_ha_tha_lua[9] = 1; 
 				}
@@ -465,6 +479,13 @@ void StartTask04(void const * argument)
 			else if(10 ==  FEE_RTOS_struct.TuDong.tu_dong_number) {			
 				
 				if(0 == FEE_RTOS_struct.TrangThai.done[10] && 0 == FEE_RTOS_struct.TuDong.nang_ha_tha_lua[10]) {
+					
+					if(HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_15) == 0) {
+						nang_canh_tay(90); 
+						while(FEE_RTOS_struct.TuDong.vi_tri_nang_ha < 5) 
+							osDelay(1); 
+					}							
+					
 					den_vi_tri_kep_lua(250); 
 					FEE_RTOS_struct.TuDong.nang_ha_tha_lua[10] = 1; 
 				}
@@ -507,7 +528,9 @@ void StartTask04(void const * argument)
 
 					// da dc delay bang encoder 
 					
-					tu_dong_11_1(); 
+					
+					
+					tu_dong_11_1(FEE_RTOS_struct.TuDong.kep_lua_tren_ro); 
 					
 					thu_tay_gap_lua();
 					
@@ -533,7 +556,8 @@ void StartTask04(void const * argument)
 
 					osDelay(400);
 					
-					tu_dong_11_2(); 
+					tu_dong_11_2(FEE_RTOS_struct.TuDong.nang_lua_khoi_ro); 
+					
 					
 					FEE_RTOS_struct.TrangThai.done[11] = 2;
 				}
@@ -543,7 +567,8 @@ void StartTask04(void const * argument)
 					tu_dong_xoay_tha_90(); 
 					osDelay(130); 
 					
-					tu_dong_11_1(); 
+					tu_dong_11_1(FEE_RTOS_struct.TuDong.kep_lua_tren_ro); 
+					
 					td11_2 = 1; 
 					FEE_RTOS_struct.TrangThai.done[11] = 3; 
 				}
@@ -585,7 +610,7 @@ void StartTask04(void const * argument)
 					} 
 					osDelay(300);
 					
-					tu_dong_11_2(); 
+					tu_dong_11_2(FEE_RTOS_struct.TuDong.nang_lua_khoi_ro); 
 					
 					FEE_RTOS_struct.TrangThai.done[11] = 4; 
 				}
@@ -662,6 +687,12 @@ void StartTask04(void const * argument)
 				
 				if(0 == FEE_RTOS_struct.TrangThai.done[12] && FEE_RTOS_struct.TuDong.nang_ha_tha_lua[12] == 0) {
 					
+					if(HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_15) == 0) {
+						nang_canh_tay(90); 
+						while(FEE_RTOS_struct.TuDong.vi_tri_nang_ha < 5) 
+							osDelay(1); 
+					}							
+					
 					den_vi_tri_kep_lua(250); 
 					FEE_RTOS_struct.TuDong.nang_ha_tha_lua[12] = 1; 
 					
@@ -731,7 +762,15 @@ void StartTask04(void const * argument)
 			
 			else if(13 == FEE_RTOS_struct.TuDong.tu_dong_number) {
 				
+				
 				if(0 == FEE_RTOS_struct.TrangThai.done[13] &&  FEE_RTOS_struct.TuDong.nang_ha_tha_lua[13] == 0) {
+					
+					if(HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_15) == 0) {
+						nang_canh_tay(90); 
+						while(FEE_RTOS_struct.TuDong.vi_tri_nang_ha < 5) 
+							osDelay(1); 
+					}									
+					
 					den_vi_tri_kep_lua(250); 
 					FEE_RTOS_struct.TuDong.nang_ha_tha_lua[13] = 1; 
 				}

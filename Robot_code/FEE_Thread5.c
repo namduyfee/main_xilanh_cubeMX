@@ -57,23 +57,7 @@ void StartTask05(void const * argument)
 				}	
 			}
 			
-//			if(5 == FEE_RTOS_struct.TuDong.tu_dong_number) {
-//				if(0 == check_day_tay_gap_td5) {
-//					
-//					osDelay(165); 
-//					
-//					day_tay_gap_lua();
-//					
-//					cam_bien_chu_u_td5 = 1; 
-//					
-//					osDelay(800); 
-//					
-//					den_vi_tri_kep_lua(toc_do_den_vi_tri_kep); 
-//			
-//					check_day_tay_gap_td5 = 1; 
-//					
-//				}
-//			}
+
 			if(td11_4 == 1) {
 				
 				osDelay(100); 

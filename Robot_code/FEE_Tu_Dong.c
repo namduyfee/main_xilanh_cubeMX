@@ -69,7 +69,7 @@ void tu_dong_1(void) {
 void tu_dong_2(void) {
 	
 	// thoi gian chac chan xilanh da keo vao 
-	osDelay(150); 												// on dinh tay      
+	osDelay(500); 												// on dinh tay      
 	
 	control_xilanh(3, 0); 
 	control_xilanh(5, 0); 
@@ -89,7 +89,7 @@ void tu_dong_2(void) {
 
 void tu_dong_3(void) {
 	
-	osDelay(180); 												// on dinh tay 
+	osDelay(200); 												// on dinh tay 
 	control_xilanh(1, 0); 
 	control_xilanh(7, 0); 
 	osDelay(thoi_gian_kep_mo_xilanh); 		// time xilanh nha 
@@ -129,6 +129,7 @@ void tu_dong_6(void) {
 	osDelay(200); 
 	kep(1); 
 	osDelay(thoi_gian_kep_mo_xilanh); 
+	
 	nang_ha_tay_gap_tu_dong(FEE_RTOS_struct.TuDong.gap_lua_len, toc_do_nang_ha); 
 	osDelay(700); 
 
@@ -147,14 +148,14 @@ void tu_dong_xoay_tha_90(void) {
 }
 
 
-void tu_dong_11_1(void) {
+void tu_dong_11_1(int vi_tri_can_den) {
 	
-	nang_ha_tay_gap_tu_dong(FEE_RTOS_struct.TuDong.kep_lua_tren_ro, toc_do_nang_ha); 
+	nang_ha_tay_gap_tu_dong(vi_tri_can_den, toc_do_nang_ha); 
 }
 
-void tu_dong_11_2(void) {
-
-	nang_ha_tay_gap_tu_dong(FEE_RTOS_struct.TuDong.nang_lua_khoi_ro, toc_do_nang_ha); 
+void tu_dong_11_2(int vi_tri_can_den) {
+	
+	nang_ha_tay_gap_tu_dong(vi_tri_can_den, toc_do_nang_ha); 
 
 }
 
@@ -239,6 +240,8 @@ void den_vi_tri_kep_lua(uint16_t toc_do) {
 }
 
 void nang_ha_tay_gap_tu_dong(uint8_t vi_tri_can_den, uint16_t toc_do) {
+	
+	FEE_RTOS_struct.TrangThai.enable_count_nang_ha = 1; 
 	
 	FEE_RTOS_struct.TuDong.stop_nang_ha = vi_tri_can_den; 
 	

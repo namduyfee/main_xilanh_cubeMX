@@ -2,7 +2,7 @@ Dependencies for Project 'MAIN_EX_V3_1', Target 'MAIN_EX_V3_1': (DO NOT MODIFY !
 CompilerVersion: 5060960::V5.06 update 7 (build 960)::.\ARMCC
 F (startup_stm32f103xb.s)(0x660A6554)(--cpu Cortex-M3 -g --apcs=interwork -I ../Core/Inc-I.\RTE\_MAIN_EX_V3_1-ID:\keilC\ARM\CMSIS\5.9.0\CMSIS\Core\Include-ID:\keilC\Keil\STM32F1xx_DFP\2.4.1\Device\Include--pd "__UVISION_VERSION SETA 533" --pd "_RTE_ SETA 1" --pd "STM32F10X_MD SETA 1" --pd "_RTE_ SETA 1"--list startup_stm32f103xb.lst --xref -o main_ex_v3_1\startup_stm32f103xb.o --depend main_ex_v3_1\startup_stm32f103xb.d)
 F (../Core/Src/main.c)(0x660A6890)(--c99 -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../FEE_Team_Code -I ../Robot_code-I.\RTE\_MAIN_EX_V3_1-ID:\keilC\ARM\CMSIS\5.9.0\CMSIS\Core\Include-ID:\keilC\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o main_ex_v3_1\main.o --depend main_ex_v3_1\main.d)
-I (../Core/Inc/main.h)(0x660B42D4)
+I (../Core/Inc/main.h)(0x660DC1E7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x64874C25)
 I (../Core/Inc/stm32f1xx_hal_conf.h)(0x660450FE)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x64874C25)
@@ -59,7 +59,7 @@ I (D:\keilC\ARM\ARMCC\include\stdlib.h)(0x5E8E3CC2)
 I (D:\keilC\ARM\ARMCC\include\math.h)(0x5E8E3CC2)
 I (../FEE_Team_Code/FEE_FLASH.h)(0x631EBAA7)
 I (../Robot_code/FEE_Function.h)(0x660465E8)
-I (../Robot_code/FEE_Tu_Dong.h)(0x660BF1E6)
+I (../Robot_code/FEE_Tu_Dong.h)(0x660D82EB)
 I (../Robot_code/FEE_Lai_Tay.h)(0x65EAF5C3)
 F (../Core/Src/freertos.c)(0x64AD8007)(--c99 -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../FEE_Team_Code -I ../Robot_code-I.\RTE\_MAIN_EX_V3_1-ID:\keilC\ARM\CMSIS\5.9.0\CMSIS\Core\Include-ID:\keilC\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o main_ex_v3_1\freertos.o --depend main_ex_v3_1\freertos.d)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x64874BB6)
@@ -73,7 +73,7 @@ I (../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3/portmacro.h)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h)(0x64874BB6)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/task.h)(0x64874BB6)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x64874BB6)
-I (../Core/Inc/main.h)(0x660B42D4)
+I (../Core/Inc/main.h)(0x660DC1E7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x64874C25)
 I (../Core/Inc/stm32f1xx_hal_conf.h)(0x660450FE)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x64874C25)
@@ -119,10 +119,10 @@ I (D:\keilC\ARM\ARMCC\include\stdlib.h)(0x5E8E3CC2)
 I (D:\keilC\ARM\ARMCC\include\math.h)(0x5E8E3CC2)
 I (../FEE_Team_Code/FEE_FLASH.h)(0x631EBAA7)
 I (../Robot_code/FEE_Function.h)(0x660465E8)
-I (../Robot_code/FEE_Tu_Dong.h)(0x660BF1E6)
+I (../Robot_code/FEE_Tu_Dong.h)(0x660D82EB)
 I (../Robot_code/FEE_Lai_Tay.h)(0x65EAF5C3)
 F (../Core/Src/stm32f1xx_it.c)(0x660450FD)(--c99 -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../FEE_Team_Code -I ../Robot_code-I.\RTE\_MAIN_EX_V3_1-ID:\keilC\ARM\CMSIS\5.9.0\CMSIS\Core\Include-ID:\keilC\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o main_ex_v3_1\stm32f1xx_it.o --depend main_ex_v3_1\stm32f1xx_it.d)
-I (../Core/Inc/main.h)(0x660B42D4)
+I (../Core/Inc/main.h)(0x660DC1E7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x64874C25)
 I (../Core/Inc/stm32f1xx_hal_conf.h)(0x660450FE)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x64874C25)
@@ -179,11 +179,11 @@ I (D:\keilC\ARM\ARMCC\include\stdlib.h)(0x5E8E3CC2)
 I (D:\keilC\ARM\ARMCC\include\math.h)(0x5E8E3CC2)
 I (../FEE_Team_Code/FEE_FLASH.h)(0x631EBAA7)
 I (../Robot_code/FEE_Function.h)(0x660465E8)
-I (../Robot_code/FEE_Tu_Dong.h)(0x660BF1E6)
+I (../Robot_code/FEE_Tu_Dong.h)(0x660D82EB)
 I (../Robot_code/FEE_Lai_Tay.h)(0x65EAF5C3)
 I (../Core/Inc/stm32f1xx_it.h)(0x660450FD)
 F (../Core/Src/stm32f1xx_hal_msp.c)(0x660450FD)(--c99 -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../FEE_Team_Code -I ../Robot_code-I.\RTE\_MAIN_EX_V3_1-ID:\keilC\ARM\CMSIS\5.9.0\CMSIS\Core\Include-ID:\keilC\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o main_ex_v3_1\stm32f1xx_hal_msp.o --depend main_ex_v3_1\stm32f1xx_hal_msp.d)
-I (../Core/Inc/main.h)(0x660B42D4)
+I (../Core/Inc/main.h)(0x660DC1E7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x64874C25)
 I (../Core/Inc/stm32f1xx_hal_conf.h)(0x660450FE)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x64874C25)
@@ -240,7 +240,7 @@ I (D:\keilC\ARM\ARMCC\include\stdlib.h)(0x5E8E3CC2)
 I (D:\keilC\ARM\ARMCC\include\math.h)(0x5E8E3CC2)
 I (../FEE_Team_Code/FEE_FLASH.h)(0x631EBAA7)
 I (../Robot_code/FEE_Function.h)(0x660465E8)
-I (../Robot_code/FEE_Tu_Dong.h)(0x660BF1E6)
+I (../Robot_code/FEE_Tu_Dong.h)(0x660D82EB)
 I (../Robot_code/FEE_Lai_Tay.h)(0x65EAF5C3)
 F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c)(0x64874C25)(--c99 -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../FEE_Team_Code -I ../Robot_code-I.\RTE\_MAIN_EX_V3_1-ID:\keilC\ARM\CMSIS\5.9.0\CMSIS\Core\Include-ID:\keilC\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o main_ex_v3_1\stm32f1xx_hal_gpio_ex.o --depend main_ex_v3_1\stm32f1xx_hal_gpio_ex.d)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x64874C25)
@@ -820,7 +820,7 @@ I (../Middlewares/Third_Party/FreeRTOS/Source/include/task.h)(0x64874BB6)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x64874BB6)
 F (..\FEE_Team_Code\FEE_ADC.c)(0x64950265)(--c99 -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../FEE_Team_Code -I ../Robot_code-I.\RTE\_MAIN_EX_V3_1-ID:\keilC\ARM\CMSIS\5.9.0\CMSIS\Core\Include-ID:\keilC\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o main_ex_v3_1\fee_adc.o --depend main_ex_v3_1\fee_adc.d)
 I (..\FEE_Team_Code\FEE_ADC.h)(0x6604530C)
-I (../Core/Inc/main.h)(0x660B42D4)
+I (../Core/Inc/main.h)(0x660DC1E7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x64874C25)
 I (../Core/Inc/stm32f1xx_hal_conf.h)(0x660450FE)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x64874C25)
@@ -877,12 +877,12 @@ I (D:\keilC\ARM\ARMCC\include\stdlib.h)(0x5E8E3CC2)
 I (D:\keilC\ARM\ARMCC\include\math.h)(0x5E8E3CC2)
 I (../FEE_Team_Code/FEE_FLASH.h)(0x631EBAA7)
 I (../Robot_code/FEE_Function.h)(0x660465E8)
-I (../Robot_code/FEE_Tu_Dong.h)(0x660BF1E6)
+I (../Robot_code/FEE_Tu_Dong.h)(0x660D82EB)
 I (../Robot_code/FEE_Lai_Tay.h)(0x65EAF5C3)
 F (..\FEE_Team_Code\FEE_ADC.h)(0x6604530C)()
 F (..\FEE_Team_Code\FEE_EXTI.c)(0x64A2BA4E)(--c99 -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../FEE_Team_Code -I ../Robot_code-I.\RTE\_MAIN_EX_V3_1-ID:\keilC\ARM\CMSIS\5.9.0\CMSIS\Core\Include-ID:\keilC\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o main_ex_v3_1\fee_exti.o --depend main_ex_v3_1\fee_exti.d)
 I (..\FEE_Team_Code\FEE_EXTI.h)(0x64950A0D)
-I (../Core/Inc/main.h)(0x660B42D4)
+I (../Core/Inc/main.h)(0x660DC1E7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x64874C25)
 I (../Core/Inc/stm32f1xx_hal_conf.h)(0x660450FE)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x64874C25)
@@ -939,12 +939,12 @@ I (D:\keilC\ARM\ARMCC\include\stdlib.h)(0x5E8E3CC2)
 I (D:\keilC\ARM\ARMCC\include\math.h)(0x5E8E3CC2)
 I (../FEE_Team_Code/FEE_FLASH.h)(0x631EBAA7)
 I (../Robot_code/FEE_Function.h)(0x660465E8)
-I (../Robot_code/FEE_Tu_Dong.h)(0x660BF1E6)
+I (../Robot_code/FEE_Tu_Dong.h)(0x660D82EB)
 I (../Robot_code/FEE_Lai_Tay.h)(0x65EAF5C3)
 F (..\FEE_Team_Code\FEE_EXTI.h)(0x64950A0D)()
 F (..\FEE_Team_Code\FEE_GPIO.c)(0x65F95973)(--c99 -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../FEE_Team_Code -I ../Robot_code-I.\RTE\_MAIN_EX_V3_1-ID:\keilC\ARM\CMSIS\5.9.0\CMSIS\Core\Include-ID:\keilC\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o main_ex_v3_1\fee_gpio.o --depend main_ex_v3_1\fee_gpio.d)
 I (..\FEE_Team_Code\FEE_GPIO.h)(0x64952576)
-I (../Core/Inc/main.h)(0x660B42D4)
+I (../Core/Inc/main.h)(0x660DC1E7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x64874C25)
 I (../Core/Inc/stm32f1xx_hal_conf.h)(0x660450FE)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x64874C25)
@@ -1001,12 +1001,12 @@ I (D:\keilC\ARM\ARMCC\include\stdlib.h)(0x5E8E3CC2)
 I (D:\keilC\ARM\ARMCC\include\math.h)(0x5E8E3CC2)
 I (../FEE_Team_Code/FEE_FLASH.h)(0x631EBAA7)
 I (../Robot_code/FEE_Function.h)(0x660465E8)
-I (../Robot_code/FEE_Tu_Dong.h)(0x660BF1E6)
+I (../Robot_code/FEE_Tu_Dong.h)(0x660D82EB)
 I (../Robot_code/FEE_Lai_Tay.h)(0x65EAF5C3)
 F (..\FEE_Team_Code\FEE_GPIO.h)(0x64952576)()
 F (..\FEE_Team_Code\FEE_LCD.c)(0x64AE117D)(--c99 -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../FEE_Team_Code -I ../Robot_code-I.\RTE\_MAIN_EX_V3_1-ID:\keilC\ARM\CMSIS\5.9.0\CMSIS\Core\Include-ID:\keilC\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o main_ex_v3_1\fee_lcd.o --depend main_ex_v3_1\fee_lcd.d)
 I (..\FEE_Team_Code\FEE_LCD.h)(0x64A2B0FB)
-I (../Core/Inc/main.h)(0x660B42D4)
+I (../Core/Inc/main.h)(0x660DC1E7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x64874C25)
 I (../Core/Inc/stm32f1xx_hal_conf.h)(0x660450FE)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x64874C25)
@@ -1063,12 +1063,12 @@ I (D:\keilC\ARM\ARMCC\include\stdlib.h)(0x5E8E3CC2)
 I (D:\keilC\ARM\ARMCC\include\math.h)(0x5E8E3CC2)
 I (../FEE_Team_Code/FEE_FLASH.h)(0x631EBAA7)
 I (../Robot_code/FEE_Function.h)(0x660465E8)
-I (../Robot_code/FEE_Tu_Dong.h)(0x660BF1E6)
+I (../Robot_code/FEE_Tu_Dong.h)(0x660D82EB)
 I (../Robot_code/FEE_Lai_Tay.h)(0x65EAF5C3)
 F (..\FEE_Team_Code\FEE_LCD.h)(0x64A2B0FB)()
-F (..\FEE_Team_Code\FEE_RTOS.c)(0x660BFEF7)(--c99 -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../FEE_Team_Code -I ../Robot_code-I.\RTE\_MAIN_EX_V3_1-ID:\keilC\ARM\CMSIS\5.9.0\CMSIS\Core\Include-ID:\keilC\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o main_ex_v3_1\fee_rtos.o --depend main_ex_v3_1\fee_rtos.d)
+F (..\FEE_Team_Code\FEE_RTOS.c)(0x660E2405)(--c99 -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../FEE_Team_Code -I ../Robot_code-I.\RTE\_MAIN_EX_V3_1-ID:\keilC\ARM\CMSIS\5.9.0\CMSIS\Core\Include-ID:\keilC\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o main_ex_v3_1\fee_rtos.o --depend main_ex_v3_1\fee_rtos.d)
 I (..\FEE_Team_Code\FEE_RTOS.h)(0x6604536B)
-I (../Core/Inc/main.h)(0x660B42D4)
+I (../Core/Inc/main.h)(0x660DC1E7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x64874C25)
 I (../Core/Inc/stm32f1xx_hal_conf.h)(0x660450FE)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x64874C25)
@@ -1125,7 +1125,7 @@ I (D:\keilC\ARM\ARMCC\include\stdlib.h)(0x5E8E3CC2)
 I (D:\keilC\ARM\ARMCC\include\math.h)(0x5E8E3CC2)
 I (../FEE_Team_Code/FEE_FLASH.h)(0x631EBAA7)
 I (../Robot_code/FEE_Function.h)(0x660465E8)
-I (../Robot_code/FEE_Tu_Dong.h)(0x660BF1E6)
+I (../Robot_code/FEE_Tu_Dong.h)(0x660D82EB)
 I (../Robot_code/FEE_Lai_Tay.h)(0x65EAF5C3)
 F (..\FEE_Team_Code\FEE_RTOS.h)(0x6604536B)()
 F (..\FEE_Team_Code\FEE_UART.c)(0x65E9FC16)(--c99 -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../FEE_Team_Code -I ../Robot_code-I.\RTE\_MAIN_EX_V3_1-ID:\keilC\ARM\CMSIS\5.9.0\CMSIS\Core\Include-ID:\keilC\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o main_ex_v3_1\fee_uart.o --depend main_ex_v3_1\fee_uart.d)
@@ -1146,7 +1146,7 @@ I (../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h)(0x64874BB6)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h)(0x64874BB6)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h)(0x64874BB6)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h)(0x64874BB6)
-I (../Core/Inc/main.h)(0x660B42D4)
+I (../Core/Inc/main.h)(0x660DC1E7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x64874C25)
 I (../Core/Inc/stm32f1xx_hal_conf.h)(0x660450FE)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x64874C25)
@@ -1187,7 +1187,7 @@ I (D:\keilC\ARM\ARMCC\include\stdlib.h)(0x5E8E3CC2)
 I (D:\keilC\ARM\ARMCC\include\math.h)(0x5E8E3CC2)
 I (../FEE_Team_Code/FEE_FLASH.h)(0x631EBAA7)
 I (../Robot_code/FEE_Function.h)(0x660465E8)
-I (../Robot_code/FEE_Tu_Dong.h)(0x660BF1E6)
+I (../Robot_code/FEE_Tu_Dong.h)(0x660D82EB)
 I (../Robot_code/FEE_Lai_Tay.h)(0x65EAF5C3)
 F (..\FEE_Team_Code\FEE_UART.h)(0x65A6ABF9)()
 F (..\FEE_Team_Code\FEE_FLASH.c)(0x64E19911)(--c99 -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../FEE_Team_Code -I ../Robot_code-I.\RTE\_MAIN_EX_V3_1-ID:\keilC\ARM\CMSIS\5.9.0\CMSIS\Core\Include-ID:\keilC\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o main_ex_v3_1\fee_flash.o --depend main_ex_v3_1\fee_flash.d)
@@ -1222,7 +1222,7 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x64874C25)
 F (..\FEE_Team_Code\FEE_FLASH.h)(0x631EBAA7)()
 F (..\FEE_Team_Code\FEE_PES_Control.c)(0x64E18E03)(--c99 -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../FEE_Team_Code -I ../Robot_code-I.\RTE\_MAIN_EX_V3_1-ID:\keilC\ARM\CMSIS\5.9.0\CMSIS\Core\Include-ID:\keilC\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o main_ex_v3_1\fee_pes_control.o --depend main_ex_v3_1\fee_pes_control.d)
 I (..\FEE_Team_Code\FEE_PES_Control.h)(0x6604536B)
-I (../Core/Inc/main.h)(0x660B42D4)
+I (../Core/Inc/main.h)(0x660DC1E7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x64874C25)
 I (../Core/Inc/stm32f1xx_hal_conf.h)(0x660450FE)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x64874C25)
@@ -1277,14 +1277,14 @@ I (D:\keilC\ARM\ARMCC\include\math.h)(0x5E8E3CC2)
 I (../FEE_Team_Code/FEE_FLASH.h)(0x631EBAA7)
 I (D:\keilC\ARM\ARMCC\include\string.h)(0x5E8E3CC2)
 I (../Robot_code/FEE_Function.h)(0x660465E8)
-I (../Robot_code/FEE_Tu_Dong.h)(0x660BF1E6)
+I (../Robot_code/FEE_Tu_Dong.h)(0x660D82EB)
 I (../Robot_code/FEE_Lai_Tay.h)(0x65EAF5C3)
 I (D:\keilC\ARM\ARMCC\include\stdarg.h)(0x5E8E3CC2)
 I (D:\keilC\ARM\ARMCC\include\stdio.h)(0x5E8E3CC2)
 F (..\FEE_Team_Code\FEE_PES_control.h)(0x6604536B)()
-F (..\Robot_code\FEE_Robot.c)(0x660C0B3E)(--c99 -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../FEE_Team_Code -I ../Robot_code-I.\RTE\_MAIN_EX_V3_1-ID:\keilC\ARM\CMSIS\5.9.0\CMSIS\Core\Include-ID:\keilC\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o main_ex_v3_1\fee_robot.o --depend main_ex_v3_1\fee_robot.d)
+F (..\Robot_code\FEE_Robot.c)(0x660DC1E7)(--c99 -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../FEE_Team_Code -I ../Robot_code-I.\RTE\_MAIN_EX_V3_1-ID:\keilC\ARM\CMSIS\5.9.0\CMSIS\Core\Include-ID:\keilC\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o main_ex_v3_1\fee_robot.o --depend main_ex_v3_1\fee_robot.d)
 I (..\Robot_code\FEE_Robot.h)(0x65F962F4)
-I (../Core/Inc/main.h)(0x660B42D4)
+I (../Core/Inc/main.h)(0x660DC1E7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x64874C25)
 I (../Core/Inc/stm32f1xx_hal_conf.h)(0x660450FE)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x64874C25)
@@ -1341,11 +1341,11 @@ I (../FEE_Team_Code/FEE_FLASH.h)(0x631EBAA7)
 I (../Robot_code/FEE_Function.h)(0x660465E8)
 I (D:\keilC\ARM\ARMCC\include\stdlib.h)(0x5E8E3CC2)
 I (D:\keilC\ARM\ARMCC\include\math.h)(0x5E8E3CC2)
-I (../Robot_code/FEE_Tu_Dong.h)(0x660BF1E6)
+I (../Robot_code/FEE_Tu_Dong.h)(0x660D82EB)
 I (../Robot_code/FEE_Lai_Tay.h)(0x65EAF5C3)
 F (..\Robot_code\FEE_Robot.h)(0x65F962F4)()
 F (..\Robot_code\FEE_Thread1.c)(0x660453BE)(--c99 -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../FEE_Team_Code -I ../Robot_code-I.\RTE\_MAIN_EX_V3_1-ID:\keilC\ARM\CMSIS\5.9.0\CMSIS\Core\Include-ID:\keilC\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o main_ex_v3_1\fee_thread1.o --depend main_ex_v3_1\fee_thread1.d)
-I (../Core/Inc/main.h)(0x660B42D4)
+I (../Core/Inc/main.h)(0x660DC1E7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x64874C25)
 I (../Core/Inc/stm32f1xx_hal_conf.h)(0x660450FE)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x64874C25)
@@ -1402,10 +1402,10 @@ I (D:\keilC\ARM\ARMCC\include\stdlib.h)(0x5E8E3CC2)
 I (D:\keilC\ARM\ARMCC\include\math.h)(0x5E8E3CC2)
 I (../FEE_Team_Code/FEE_FLASH.h)(0x631EBAA7)
 I (../Robot_code/FEE_Function.h)(0x660465E8)
-I (../Robot_code/FEE_Tu_Dong.h)(0x660BF1E6)
+I (../Robot_code/FEE_Tu_Dong.h)(0x660D82EB)
 I (../Robot_code/FEE_Lai_Tay.h)(0x65EAF5C3)
 F (..\Robot_code\FEE_Thread2.c)(0x660453BE)(--c99 -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../FEE_Team_Code -I ../Robot_code-I.\RTE\_MAIN_EX_V3_1-ID:\keilC\ARM\CMSIS\5.9.0\CMSIS\Core\Include-ID:\keilC\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o main_ex_v3_1\fee_thread2.o --depend main_ex_v3_1\fee_thread2.d)
-I (../Core/Inc/main.h)(0x660B42D4)
+I (../Core/Inc/main.h)(0x660DC1E7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x64874C25)
 I (../Core/Inc/stm32f1xx_hal_conf.h)(0x660450FE)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x64874C25)
@@ -1462,10 +1462,10 @@ I (D:\keilC\ARM\ARMCC\include\stdlib.h)(0x5E8E3CC2)
 I (D:\keilC\ARM\ARMCC\include\math.h)(0x5E8E3CC2)
 I (../FEE_Team_Code/FEE_FLASH.h)(0x631EBAA7)
 I (../Robot_code/FEE_Function.h)(0x660465E8)
-I (../Robot_code/FEE_Tu_Dong.h)(0x660BF1E6)
+I (../Robot_code/FEE_Tu_Dong.h)(0x660D82EB)
 I (../Robot_code/FEE_Lai_Tay.h)(0x65EAF5C3)
-F (..\Robot_code\FEE_Thread3.c)(0x660BD956)(--c99 -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../FEE_Team_Code -I ../Robot_code-I.\RTE\_MAIN_EX_V3_1-ID:\keilC\ARM\CMSIS\5.9.0\CMSIS\Core\Include-ID:\keilC\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o main_ex_v3_1\fee_thread3.o --depend main_ex_v3_1\fee_thread3.d)
-I (../Core/Inc/main.h)(0x660B42D4)
+F (..\Robot_code\FEE_Thread3.c)(0x660E1828)(--c99 -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../FEE_Team_Code -I ../Robot_code-I.\RTE\_MAIN_EX_V3_1-ID:\keilC\ARM\CMSIS\5.9.0\CMSIS\Core\Include-ID:\keilC\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o main_ex_v3_1\fee_thread3.o --depend main_ex_v3_1\fee_thread3.d)
+I (../Core/Inc/main.h)(0x660DC1E7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x64874C25)
 I (../Core/Inc/stm32f1xx_hal_conf.h)(0x660450FE)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x64874C25)
@@ -1522,10 +1522,10 @@ I (D:\keilC\ARM\ARMCC\include\stdlib.h)(0x5E8E3CC2)
 I (D:\keilC\ARM\ARMCC\include\math.h)(0x5E8E3CC2)
 I (../FEE_Team_Code/FEE_FLASH.h)(0x631EBAA7)
 I (../Robot_code/FEE_Function.h)(0x660465E8)
-I (../Robot_code/FEE_Tu_Dong.h)(0x660BF1E6)
+I (../Robot_code/FEE_Tu_Dong.h)(0x660D82EB)
 I (../Robot_code/FEE_Lai_Tay.h)(0x65EAF5C3)
-F (..\Robot_code\FEE_Thread4.c)(0x660C0B70)(--c99 -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../FEE_Team_Code -I ../Robot_code-I.\RTE\_MAIN_EX_V3_1-ID:\keilC\ARM\CMSIS\5.9.0\CMSIS\Core\Include-ID:\keilC\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o main_ex_v3_1\fee_thread4.o --depend main_ex_v3_1\fee_thread4.d)
-I (../Core/Inc/main.h)(0x660B42D4)
+F (..\Robot_code\FEE_Thread4.c)(0x660E2771)(--c99 -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../FEE_Team_Code -I ../Robot_code-I.\RTE\_MAIN_EX_V3_1-ID:\keilC\ARM\CMSIS\5.9.0\CMSIS\Core\Include-ID:\keilC\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o main_ex_v3_1\fee_thread4.o --depend main_ex_v3_1\fee_thread4.d)
+I (../Core/Inc/main.h)(0x660DC1E7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x64874C25)
 I (../Core/Inc/stm32f1xx_hal_conf.h)(0x660450FE)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x64874C25)
@@ -1582,11 +1582,11 @@ I (D:\keilC\ARM\ARMCC\include\stdlib.h)(0x5E8E3CC2)
 I (D:\keilC\ARM\ARMCC\include\math.h)(0x5E8E3CC2)
 I (../FEE_Team_Code/FEE_FLASH.h)(0x631EBAA7)
 I (../Robot_code/FEE_Function.h)(0x660465E8)
-I (../Robot_code/FEE_Tu_Dong.h)(0x660BF1E6)
+I (../Robot_code/FEE_Tu_Dong.h)(0x660D82EB)
 I (../Robot_code/FEE_Lai_Tay.h)(0x65EAF5C3)
 I (../Core/Inc/dwt_stm32_delay.h)(0x65EAC2D6)
-F (..\Robot_code\FEE_Thread5.c)(0x660BF1F2)(--c99 -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../FEE_Team_Code -I ../Robot_code-I.\RTE\_MAIN_EX_V3_1-ID:\keilC\ARM\CMSIS\5.9.0\CMSIS\Core\Include-ID:\keilC\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o main_ex_v3_1\fee_thread5.o --depend main_ex_v3_1\fee_thread5.d)
-I (../Core/Inc/main.h)(0x660B42D4)
+F (..\Robot_code\FEE_Thread5.c)(0x660DAE3B)(--c99 -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../FEE_Team_Code -I ../Robot_code-I.\RTE\_MAIN_EX_V3_1-ID:\keilC\ARM\CMSIS\5.9.0\CMSIS\Core\Include-ID:\keilC\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o main_ex_v3_1\fee_thread5.o --depend main_ex_v3_1\fee_thread5.d)
+I (../Core/Inc/main.h)(0x660DC1E7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x64874C25)
 I (../Core/Inc/stm32f1xx_hal_conf.h)(0x660450FE)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x64874C25)
@@ -1643,10 +1643,10 @@ I (D:\keilC\ARM\ARMCC\include\stdlib.h)(0x5E8E3CC2)
 I (D:\keilC\ARM\ARMCC\include\math.h)(0x5E8E3CC2)
 I (../FEE_Team_Code/FEE_FLASH.h)(0x631EBAA7)
 I (../Robot_code/FEE_Function.h)(0x660465E8)
-I (../Robot_code/FEE_Tu_Dong.h)(0x660BF1E6)
+I (../Robot_code/FEE_Tu_Dong.h)(0x660D82EB)
 I (../Robot_code/FEE_Lai_Tay.h)(0x65EAF5C3)
 F (.\FEE_Thread6.c)(0x660A7453)(--c99 -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../FEE_Team_Code -I ../Robot_code-I.\RTE\_MAIN_EX_V3_1-ID:\keilC\ARM\CMSIS\5.9.0\CMSIS\Core\Include-ID:\keilC\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o main_ex_v3_1\fee_thread6.o --depend main_ex_v3_1\fee_thread6.d)
-I (../Core/Inc/main.h)(0x660B42D4)
+I (../Core/Inc/main.h)(0x660DC1E7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x64874C25)
 I (../Core/Inc/stm32f1xx_hal_conf.h)(0x660450FE)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x64874C25)
@@ -1703,11 +1703,11 @@ I (D:\keilC\ARM\ARMCC\include\stdlib.h)(0x5E8E3CC2)
 I (D:\keilC\ARM\ARMCC\include\math.h)(0x5E8E3CC2)
 I (../FEE_Team_Code/FEE_FLASH.h)(0x631EBAA7)
 I (../Robot_code/FEE_Function.h)(0x660465E8)
-I (../Robot_code/FEE_Tu_Dong.h)(0x660BF1E6)
+I (../Robot_code/FEE_Tu_Dong.h)(0x660D82EB)
 I (../Robot_code/FEE_Lai_Tay.h)(0x65EAF5C3)
 F (..\Robot_code\FEE_Function.c)(0x66096252)(--c99 -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../FEE_Team_Code -I ../Robot_code-I.\RTE\_MAIN_EX_V3_1-ID:\keilC\ARM\CMSIS\5.9.0\CMSIS\Core\Include-ID:\keilC\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o main_ex_v3_1\fee_function.o --depend main_ex_v3_1\fee_function.d)
 I (..\Robot_code\FEE_Function.h)(0x660465E8)
-I (../Core/Inc/main.h)(0x660B42D4)
+I (../Core/Inc/main.h)(0x660DC1E7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x64874C25)
 I (../Core/Inc/stm32f1xx_hal_conf.h)(0x660450FE)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x64874C25)
@@ -1764,12 +1764,12 @@ I (D:\keilC\ARM\ARMCC\include\stdlib.h)(0x5E8E3CC2)
 I (D:\keilC\ARM\ARMCC\include\math.h)(0x5E8E3CC2)
 I (../FEE_Team_Code/FEE_FLASH.h)(0x631EBAA7)
 I (../Robot_code/FEE_Function.h)(0x660465E8)
-I (../Robot_code/FEE_Tu_Dong.h)(0x660BF1E6)
+I (../Robot_code/FEE_Tu_Dong.h)(0x660D82EB)
 I (../Robot_code/FEE_Lai_Tay.h)(0x65EAF5C3)
 F (..\Robot_code\FEE_Function.h)(0x660465E8)()
 F (..\Robot_code\FEE_Lai_Tay.c)(0x660465F6)(--c99 -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../FEE_Team_Code -I ../Robot_code-I.\RTE\_MAIN_EX_V3_1-ID:\keilC\ARM\CMSIS\5.9.0\CMSIS\Core\Include-ID:\keilC\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o main_ex_v3_1\fee_lai_tay.o --depend main_ex_v3_1\fee_lai_tay.d)
 I (..\Robot_code\FEE_Lai_Tay.h)(0x65EAF5C3)
-I (../Core/Inc/main.h)(0x660B42D4)
+I (../Core/Inc/main.h)(0x660DC1E7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x64874C25)
 I (../Core/Inc/stm32f1xx_hal_conf.h)(0x660450FE)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x64874C25)
@@ -1826,12 +1826,12 @@ I (D:\keilC\ARM\ARMCC\include\stdlib.h)(0x5E8E3CC2)
 I (D:\keilC\ARM\ARMCC\include\math.h)(0x5E8E3CC2)
 I (../FEE_Team_Code/FEE_FLASH.h)(0x631EBAA7)
 I (../Robot_code/FEE_Function.h)(0x660465E8)
-I (../Robot_code/FEE_Tu_Dong.h)(0x660BF1E6)
+I (../Robot_code/FEE_Tu_Dong.h)(0x660D82EB)
 I (../Robot_code/FEE_Lai_Tay.h)(0x65EAF5C3)
 F (..\Robot_code\FEE_Lai_Tay.h)(0x65EAF5C3)()
-F (..\Robot_code\FEE_Tu_Dong.c)(0x660BF1E6)(--c99 -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../FEE_Team_Code -I ../Robot_code-I.\RTE\_MAIN_EX_V3_1-ID:\keilC\ARM\CMSIS\5.9.0\CMSIS\Core\Include-ID:\keilC\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o main_ex_v3_1\fee_tu_dong.o --depend main_ex_v3_1\fee_tu_dong.d)
-I (..\Robot_code\FEE_Tu_Dong.h)(0x660BF1E6)
-I (../Core/Inc/main.h)(0x660B42D4)
+F (..\Robot_code\FEE_Tu_Dong.c)(0x660DC1E8)(--c99 -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../FEE_Team_Code -I ../Robot_code-I.\RTE\_MAIN_EX_V3_1-ID:\keilC\ARM\CMSIS\5.9.0\CMSIS\Core\Include-ID:\keilC\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o main_ex_v3_1\fee_tu_dong.o --depend main_ex_v3_1\fee_tu_dong.d)
+I (..\Robot_code\FEE_Tu_Dong.h)(0x660D82EB)
+I (../Core/Inc/main.h)(0x660DC1E7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x64874C25)
 I (../Core/Inc/stm32f1xx_hal_conf.h)(0x660450FE)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x64874C25)
@@ -1888,6 +1888,6 @@ I (D:\keilC\ARM\ARMCC\include\stdlib.h)(0x5E8E3CC2)
 I (D:\keilC\ARM\ARMCC\include\math.h)(0x5E8E3CC2)
 I (../FEE_Team_Code/FEE_FLASH.h)(0x631EBAA7)
 I (../Robot_code/FEE_Function.h)(0x660465E8)
-I (../Robot_code/FEE_Tu_Dong.h)(0x660BF1E6)
+I (../Robot_code/FEE_Tu_Dong.h)(0x660D82EB)
 I (../Robot_code/FEE_Lai_Tay.h)(0x65EAF5C3)
-F (..\Robot_code\FEE_Tu_Dong.h)(0x660BF1E6)()
+F (..\Robot_code\FEE_Tu_Dong.h)(0x660D82EB)()

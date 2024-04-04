@@ -43,7 +43,6 @@ void StartTask03(void const * argument)
 		
 		khoi_tao_tu_dong(); 
 		
-		
 /************************************ SWITCH MODE  LAI TAY 1 - 2 *************************************/ 
 		
 		if(0 == FEE_PES.Select && 0 == FEE_PES.R2) {
@@ -54,6 +53,21 @@ void StartTask03(void const * argument)
 		}
 		else 
 			FEE_RTOS_struct.TrangThai.check_sw_mode_lai_tay = 0;  
+		
+		
+		/********************************** Cac Nut Du Phong *******************************************************/
+		// tranh cao max day dai td11 
+		if(1 == FEE_RTOS_struct.TrangThai.mode_run) {
+			
+			if(11 == FEE_RTOS_struct.TuDong.tu_dong_number && FEE_RTOS_struct.TrangThai.done[11] == 4) {
+				if(0 == FEE_PES_Btn.S22) {
+					pid_dc3(FEE_RTOS_struct.Nang_ha.chieu, 1); 
+					khoa_dc_tay(3); 
+					FEE_RTOS_struct.TuDong.check_cam_bien_td_nang_ha[11] = 4; 
+				}
+			}
+	
+		}
 
 /********************************** KHOI DONG MEM  TAY 1 ************************************************/
 		if(1 == FEE_RTOS_struct.TrangThai.mode_run) {
@@ -69,6 +83,8 @@ void StartTask03(void const * argument)
 				}
 			}
 			
+			
+		
 			/************************* chong troi xoay thuong ******************************/ 
 			
 			else {
